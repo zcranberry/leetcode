@@ -26,21 +26,21 @@ def delNode(prev):
     NodeCount -= 1
 
 #给一个List,return一个head,改成全局head之后不return也行
-def buildList(array):
+def buildList(array): #这个目前从0开始才正确，不接受自定义的array
     global NodeArray
     global NodeHead
     length = len(array)
     if length == 0:
         return None
     for i in range(length - 1, -1, -1):
-        newNode = ListNode(i)
+        newNode = ListNode(i, array[i])
         insertBefore(newNode)
         NodeArray.insert(0, newNode)
     return NodeHead
 
 def travelByHead(head):
     while head:
-        print head,head.pos
+        print head,head.val
         head = head.next
 
 #用Array为了调试方便，链表题很容易弄乱结构，用Array可以保持住创建时的结构，变的只是里面的next
@@ -82,7 +82,7 @@ def reverse_List(head, tail = None):
     #return curr
     
 if __name__ == '__main__':
-    buildList(range(1,5))
+    buildList(range(1,8))
     print NodeHead
     travelByHead(NodeHead)
     travelByArray(NodeArray)
