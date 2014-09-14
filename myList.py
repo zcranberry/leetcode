@@ -1,9 +1,10 @@
 #encoding:UTF-8
 class ListNode:
-    def __init__(self, pos, val = None , next = None):
+    def __init__(self, pos, val = None , next = None, random = None):
         self.val = val
         self.pos = pos
         self.next = next
+        self.random = random
 
 #按说应该封入一个类里面，这里放全局变量里
 NodeCount = 0
