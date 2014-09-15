@@ -1,0 +1,4 @@
+leetcode里不能
+from a import b
+如果需要用库函数
+直接使用a.b,不需要import 
